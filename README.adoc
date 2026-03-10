@@ -120,6 +120,7 @@ WARNING: If you're done using it, don't forget to shut it down!
 
 == Miscellaneous
 
+* `jdbc/typed-property-path` - Example project to demonstrate usage of `TypedPropertyPath` for refactoring safe queries and sort.
 * `mongodb/fragment-spi` - Example project how to use Spring Data Fragment SPI to provide reusable custom extensions.
 * `bom` - Example project how to use the Spring Data release train bom in non-Spring-Boot scenarios.
 * `map` - Example project to show how to use `Map`-backed repositories.
