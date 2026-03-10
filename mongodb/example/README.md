@@ -6,6 +6,7 @@ This project contains examples for:
 * Usage of property-specific converters.
 * `EntityCallback` API usage for before convert/save interaction.
 * Result projections for DTOs and interface types.
+* Bulk write to multiple collections.
 * Query metadata.
 * Unwrapping entities into the parent document.
 

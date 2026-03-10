@@ -19,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.data.core.TypeInformation;
 import org.springframework.data.jdbc.core.convert.DefaultJdbcTypeFactory;
 import org.springframework.data.jdbc.core.convert.JdbcConverter;
 import org.springframework.data.jdbc.core.convert.JdbcCustomConversions;
@@ -29,7 +30,6 @@ import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration
 import org.springframework.data.relational.core.conversion.RowDocumentAccessor;
 import org.springframework.data.relational.core.dialect.Dialect;
 import org.springframework.data.relational.core.mapping.RelationalPersistentEntity;
-import org.springframework.data.util.TypeInformation;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.util.ClassUtils;
 
@@ -67,7 +67,7 @@ class Application {
 		 * @param dialect
 		 * @return
 		 */
-		@Override
+//		@Override
 		public JdbcConverter jdbcConverter(JdbcMappingContext mappingContext, NamedParameterJdbcOperations operations,
 				@Lazy RelationResolver relationResolver, JdbcCustomConversions conversions, Dialect dialect) {
 

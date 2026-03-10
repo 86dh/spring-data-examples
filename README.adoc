@@ -60,7 +60,7 @@ Contains also examples running on Virtual Threads.
 
 * `aot-optimization` - Use Ahead-Of-Time Repositories with Spring Data MongoDB.
 * `aggregation` - Example project to showcase the MongoDB aggregation framework support.
-* `example` - Example project for general repository functionality (including geo-spatial functionality), Querydsl integration and advanced topics.
+* `example` - Example project for general repository functionality (including geo-spatial functionality), Querydsl integration, bulk write and other advanced topics.
 * `fluent-api` - Example project to show the new fluent API (`MongoTemplate`-alternative) to interact with MongoDB.
 * `geo-json` - Example project showing usage of http://geojson.org[GeoJSON] with MongoDB.
 * `gridfs` - Example project showing usage of gridFS with MongoDB.
