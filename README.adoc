@@ -88,7 +88,8 @@ Contains also examples running on Virtual Threads.
 
 * `cluster` - Example for Redis Cluster support.
 * `example` - Example for basic Spring Data Redis setup.
-* `pubsub` - Example project to show Pub/Sub usage using Platform and Virtual Threads.
+* `listener` - Example to show declarative `@RedisListener` Pub/Sub.
+* `pubsub` - Example project to show programmatic Pub/Sub usage using Platform and Virtual Threads.
 * `reactive` - Example project to show reactive template support.
 * `repositories` - Example demonstrating Spring Data repository abstraction on top of Redis.
 * `sentinel` - Example for Redis Sentinel support.
