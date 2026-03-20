@@ -18,8 +18,8 @@
 	<modules>
 		<module>cluster</module>
 		<module>example</module>
-		<module>listener</module>
 		<module>pubsub</module>
+		<module>pubsub-listener</module>
 		<module>reactive</module>
 		<module>repositories</module>
 		<module>sentinel</module>

@@ -10,9 +10,11 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>spring-data-redis-listener</artifactId>
-	<name>Spring Data Redis - Annotated Listener</name>
-	<description>Sample project for Spring Data Redis @RedisListener annotation-driven Pub/Sub</description>
+	<artifactId>spring-data-redis-pubsub-listener</artifactId>
+	<name>Spring Data Redis - Annotated Pub/Sub Listener</name>
+	<description>Sample project for annotation-driven Spring Data Redis Pub/Sub
+		@RedisListener
+	</description>
 
 	<dependencies>
 
