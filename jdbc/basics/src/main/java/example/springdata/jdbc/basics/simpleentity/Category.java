@@ -43,6 +43,12 @@ public class Category {
 	private @Setter long inserted;
 	private AgeGroup ageGroup;
 
+	public Category(String name, String description) {
+		this.id = null;
+		this.name = name;
+		this.description = description;
+	}
+
 	public Category(String name, String description, AgeGroup ageGroup) {
 
 		this.id = null;
@@ -57,5 +63,10 @@ public class Category {
 		if (inserted == 0) {
 			inserted = System.currentTimeMillis();
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "%s %s".formatted(name, description);
 	}
 }

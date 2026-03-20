@@ -20,14 +20,13 @@
 		<module>aot-optimization</module>
 		<module>basics</module>
 		<module>composite-ids</module>
+		<module>graalvm-native</module>
 		<module>howto</module>
 		<module>immutables</module>
 		<module>jmolecules</module>
 		<module>jooq</module>
 		<module>singlequeryloading</module>
-		<module>typed-property-path</module>
 		<!-- <module>mybatis</module> -->
-		<module>graalvm-native</module>
 	</modules>
 
 	<dependencies>

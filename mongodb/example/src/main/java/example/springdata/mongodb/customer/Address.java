@@ -18,6 +18,7 @@ package example.springdata.mongodb.customer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.geo.Point;
 
 /**
@@ -30,6 +31,13 @@ import org.springframework.data.geo.Point;
 public class Address {
 
 	private final Point location;
-	private String street;
+	private String city;
 	private String zipCode;
+
+	@PersistenceCreator
+	public Address(Point location, String city, String zipCode) {
+		this.location = location;
+		this.city = city;
+		this.zipCode = zipCode;
+	}
 }

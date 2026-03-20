@@ -16,10 +16,12 @@
 package example.springdata.jdbc.basics.simpleentity;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.ListPagingAndSortingRepository;
 
 /**
  * Repository for Categories.
  *
  * @author Jens Schauder
  */
-interface CategoryRepository extends CrudRepository<Category, Long>, WithInsert<Category> {}
+public interface CategoryRepository
+		extends CrudRepository<Category, Long>, WithInsert<Category>, ListPagingAndSortingRepository<Category, Long> {}

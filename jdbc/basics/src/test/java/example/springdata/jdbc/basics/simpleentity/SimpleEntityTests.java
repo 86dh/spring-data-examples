@@ -27,10 +27,9 @@ import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureJdbc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * Demonstrates simple CRUD operations with a simple entity without any references.
+ * Demonstrates typed property path usage.
  *
- * @author Jens Schauder
- * @author Divya Srivastava
+ * @author Mark Paluch
  */
 @SpringBootTest(classes = CategoryConfiguration.class)
 @AutoConfigureJdbc
