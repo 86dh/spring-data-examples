@@ -11,6 +11,10 @@
 	<artifactId>spring-data-mongodb-example</artifactId>
 	<name>Spring Data MongoDB - Example</name>
 
+	<properties>
+		<spring-data-bom.version>2026.0.0-M2</spring-data-bom.version>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>

@@ -15,6 +15,10 @@
 	<name>Spring Data JDBC - Basic usage examples</name>
 	<description>Sample project demonstrating Spring Data JDBC features</description>
 
+	<properties>
+		<spring-data-bom.version>2026.0.0-M2</spring-data-bom.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

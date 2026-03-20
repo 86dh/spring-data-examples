@@ -15,4 +15,8 @@
 	<name>Spring Data JDBC - Typed Property Path Example</name>
 	<description>Sample project demonstrating type-safe property paths (TypedPropertyPath) with Sort in Spring Data JDBC</description>
 
+	<properties>
+		<spring-data-bom.version>2026.0.0-M2</spring-data-bom.version>
+	</properties>
+
 </project>

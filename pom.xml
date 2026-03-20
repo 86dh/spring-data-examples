@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.1</version>
+		<version>4.0.4</version>
 	</parent>
 
 	<modules>
@@ -39,6 +39,8 @@
 		<jvm.enable-preview></jvm.enable-preview>
 		<maven.compiler.source>25</maven.compiler.source>
 		<maven.compiler.target>25</maven.compiler.target>
+		<!-- Remove after Boot 4.1 upgrade -->
+		<lettuce.version>7.5.0.RELEASE</lettuce.version>
 	</properties>
 
 	<profiles>
