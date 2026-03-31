@@ -1,11 +1,11 @@
 /*
- * Copyright 2025 the original author or authors.
+ * Copyright 2025-present the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,6 +16,7 @@
 package example.springdata.jpa.simple;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.springframework.data.jpa.criteria.Expressions.*;
 
 import jakarta.persistence.EntityManager;
 
@@ -79,6 +80,29 @@ class SpecificationTests {
 		assertThat(repository.findAll(isFirstName)).isEmpty();
 
 		List<User> result = repository.findAll((from, cb) -> cb.equal(from.get("firstname"), "Dan"));
+
+		assertThat(result).hasSize(1);
+		assertThat(result).extracting(User::getFirstname).containsOnly("Dan");
+		assertThat(result).extracting(User::getLastname).containsOnly("Brown");
+	}
+
+	@Test
+	void updateWithTypedSpecification() {
+
+		PredicateSpecification<User> isFirstName = (from, cb) -> cb.equal(path(from, User::getFirstname), "Dave");
+		PredicateSpecification<User> isLastName = (from, cb) -> cb.equal(path(from, User::getLastname), "Matthews");
+
+		UpdateSpecification<User> specification = UpdateSpecification.<User> update((root, update, criteriaBuilder) -> {
+			update.set(path(root, User::getFirstname), "Dan");
+			update.set(path(root, User::getLastname), "Brown");
+		}).where(isFirstName.and(isLastName));
+
+		assertThat(repository.update(specification)).isEqualTo(1);
+		entityManager.clear();
+
+		assertThat(repository.findAll(isFirstName)).isEmpty();
+
+		List<User> result = repository.findAll((from, cb) -> cb.equal(path(from, User::getFirstname), "Dan"));
 
 		assertThat(result).hasSize(1);
 		assertThat(result).extracting(User::getFirstname).containsOnly("Dan");

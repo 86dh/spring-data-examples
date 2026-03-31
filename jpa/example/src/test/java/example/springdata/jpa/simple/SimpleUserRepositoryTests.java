@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2021 the original author or authors.
+ * Copyright 2013-present the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Christoph Strobl
  * @author Divya Srivastava
  * @author Jens Schauder
+ * @author Mark Paluch
  */
 @Transactional
 @SpringBootTest
@@ -200,6 +201,30 @@ class SimpleUserRepositoryTests {
 		assertThat(resultAsc).containsExactly(user0, user1);
 
 		var resultDesc = repository.findTop2By(Sort.by(DESC, "lastname"));
+
+		assertThat(resultDesc).containsExactly(user2, user1);
+	}
+
+	@Test
+	void findTop2ByWithTypedSort() {
+
+		var user0 = new User();
+		user0.setLastname("lastname-0");
+
+		var user1 = new User();
+		user1.setLastname("lastname-1");
+
+		var user2 = new User();
+		user2.setLastname("lastname-2");
+
+		// we deliberately save the items in reverse
+		repository.saveAll(Arrays.asList(user2, user1, user0));
+
+		var resultAsc = repository.findTop2By(Sort.by(ASC, User::getLastname));
+
+		assertThat(resultAsc).containsExactly(user0, user1);
+
+		var resultDesc = repository.findTop2By(Sort.by(Sort.Order.desc(User::getLastname)));
 
 		assertThat(resultDesc).containsExactly(user2, user1);
 	}

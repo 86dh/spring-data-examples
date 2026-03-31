@@ -14,6 +14,10 @@
 	<name>Spring Data JPA - Example</name>
 	<description>Small sample project showing the usage of Spring Data JPA.</description>
 
+	<properties>
+		<spring-data-bom.version>2026.0.0-SNAPSHOT</spring-data-bom.version>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
